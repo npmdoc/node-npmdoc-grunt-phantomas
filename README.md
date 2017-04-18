@@ -1,9 +1,14 @@
-# api documentation for  [grunt-phantomas (v0.14.0)](https://github.com/stefanjudis/grunt-phantomas)  [![npm package](https://img.shields.io/npm/v/npmdoc-grunt-phantomas.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grunt-phantomas) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-phantomas.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-phantomas)
+# npmdoc-grunt-phantomas
+
+#### api documentation for  [grunt-phantomas (v0.14.0)](https://github.com/stefanjudis/grunt-phantomas)  [![npm package](https://img.shields.io/npm/v/npmdoc-grunt-phantomas.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grunt-phantomas) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-phantomas.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-phantomas)
+
 #### Grunt plugin for phantomas
 
-[![NPM](https://nodei.co/npm/grunt-phantomas.png?downloads=true)](https://www.npmjs.com/package/grunt-phantomas)
+[![NPM](https://nodei.co/npm/grunt-phantomas.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/grunt-phantomas)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-grunt-phantomas/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-grunt-phantomas_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-grunt-phantomas/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-grunt-phantomas/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-grunt-phantomas/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-grunt-phantomas/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-grunt-phantomas/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-grunt-phantomas/build/screenCapture.npmPackageListing.svg)
 
@@ -18,7 +23,6 @@
 {
     "author": {
         "name": "stefan judis",
-        "email": "stefanjudis@gmail.com",
         "url": "http://stefanjudis.de"
     },
     "bugs": {
@@ -74,8 +78,7 @@
     "main": "Gruntfile.js",
     "maintainers": [
         {
-            "name": "stefanjudis",
-            "email": "stefanjudis@gmail.com"
+            "name": "stefanjudis"
         }
     ],
     "name": "grunt-phantomas",
@@ -83,7 +86,6 @@
     "peerDependencies": {
         "grunt": ">=0.4.0"
     },
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/stefanjudis/grunt-phantomas.git"
@@ -96,16 +98,6 @@
     "version": "0.14.0"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module grunt-phantomas](#apidoc.module.grunt-phantomas)
-
-
-
-# <a name="apidoc.module.grunt-phantomas"></a>[module grunt-phantomas](#apidoc.module.grunt-phantomas)
 
 
 

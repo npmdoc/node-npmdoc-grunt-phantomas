@@ -13,7 +13,7 @@ npmdoc-grunt-phantomas@0.0.1 /home/travis/build/npmdoc/node-npmdoc-grunt-phantom
   │   ├── map-obj@1.0.1 
   │   ├── minimist@1.2.0 
   │   ├─┬ normalize-package-data@2.3.6 
-  │   │ ├── hosted-git-info@2.4.1 
+  │   │ ├── hosted-git-info@2.4.2 
   │   │ ├─┬ is-builtin-module@1.0.0 
   │   │ │ └── builtin-modules@1.1.1 
   │   │ └─┬ validate-npm-package-license@3.0.1 
