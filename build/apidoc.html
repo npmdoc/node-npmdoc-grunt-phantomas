@@ -61,12 +61,197 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.grunt-phantomas">module grunt-phantomas</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-phantomas.grunt-phantomas">
+            function <span class="apidocSignatureSpan"></span>grunt-phantomas
+            <span class="apidocSignatureSpan">( grunt )</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.grunt-phantomas" id="apidoc.module.grunt-phantomas">module grunt-phantomas</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-phantomas.grunt-phantomas" id="apidoc.element.grunt-phantomas.grunt-phantomas">
+        function <span class="apidocSignatureSpan"></span>grunt-phantomas
+        <span class="apidocSignatureSpan">( grunt )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">grunt-phantomas = function ( grunt ) {
+  var devIndexPath = &#x27;./phantomas/&#x27;;
+
+  grunt.initConfig( {
+
+    clean : {
+<span class="apidocCodeCommentSpan">      /* https://github.com/gruntjs/grunt-contrib-clean */
+</span>      tests : [ &#x27;tmp&#x27; ],
+    },
+
+
+    compass : {
+      /* https://github.com/gruntjs/grunt-contrib-compass */
+      dist : {
+        options : {
+          sassDir     : &#x27;tasks/assets/sass&#x27;,
+          cssDir      : &#x27;tasks/public/styles&#x27;,
+          environment : &#x27;production&#x27;
+        }
+      }
+    },
+
+
+    copy : {
+      /* https://github.com/gruntjs/grunt-contrib-copy */
+      scripts : {
+        files : [
+          {
+            cwd    : &#x27;tasks/public/scripts/&#x27;,
+            expand : true,
+            src    : [ &#x27;**&#x27; ],
+            dest   : devIndexPath + &#x27;public/scripts/&#x27;,
+            filter : &#x27;isFile&#x27;
+          },
+        ]
+      },
+      styles : {
+        files : [
+          {
+            cwd    : &#x27;tasks/public/styles/&#x27;,
+            expand : true,
+            src    : [ &#x27;**&#x27; ],
+            dest   : devIndexPath + &#x27;public/styles/&#x27;,
+            filter : &#x27;isFile&#x27;
+          },
+        ]
+      }
+    },
+
+
+    jscs : {
+      /* https://www.npmjs.org/package/grunt-jscs-checker */
+      src     : [
+        &#x27;Gruntfile.js&#x27;,
+        &#x27;tasks/assets/**/*.js&#x27;,
+        &#x27;!tasks/assets/scripts/d3.min.js&#x27;,
+        &#x27;tasks/lib/phantomas.js&#x27;,
+        &#x27;&#x3c;%= nodeunit.tests %&#x3e;&#x27;,
+      ],
+      options : {
+        config : &#x27;.jscs.json&#x27;
+      }
+    },
+
+
+    jshint : {
+      /* https://github.com/gruntjs/grunt-contrib-jshint */
+      all : [
+        &#x27;Gruntfile.js&#x27;,
+        &#x27;tasks/assets/**/*.js&#x27;,
+        &#x27;!tasks/assets/scripts/d3.min.js&#x27;,
+        &#x27;tasks/lib/**/phantomas.js&#x27;,
+        &#x27;&#x3c;%= nodeunit.tests %&#x3e;&#x27;,
+      ],
+      options : {
+        jshintrc : &#x27;.jshintrc&#x27;,
+      },
+    },
+
+
+    phantomas : {
+      /* https://github.com/stefanjudis/grunt-phantomas */
+      grunt : {
+        options : {
+          assertions : {
+            &#x27;assetsWithQueryString&#x27; : 3,
+            &#x27;biggestLatency&#x27;        : 1400,
+            &#x27;bodyHTMLSize&#x27;          : 10500,
+            &#x27;commentsSize&#x27;          : 55,
+            &#x27;consoleMessages&#x27;       : 0,
+            &#x27;hiddenContentSize&#x27;     : 65,
+            &#x27;jsErrors&#x27;              : 0,
+            &#x27;gzipRequests&#x27;          : {
+              &#x27;type&#x27;  : &#x27;&#x3c;&#x27;,
+              &#x27;value&#x27; : 8
+            },
+            &#x27;medianResponse&#x27;        : 400,
+            &#x27;nodesWithInlineCSS&#x27;    : 0,
+            &#x27;requests&#x27;              : 30,
+            &#x27;timeToFirstImage&#x27;      : 1100,
+            &#x27;DOMelementsCount&#x27;      : 200,
+            &#x27;DOMqueries&#x27;            : 10
+          },
+          // additionalStylesheet : &#x27;/Users/stefan/Desktop/custom2.css&#x27;,
+          // buildUi              : false,
+          // output               : &#x27;json&#x27;,
+          // limitIncludedRuns    : false,
+          indexPath            : &#x27;./phantomas/&#x27;,
+          options              : {
+            &#x27;timeout&#x27;        : 30
+          },
+          url                  : &#x27;http://gruntjs.com/&#x27;
+        }
+      }
+    },
+
+
+    nodeunit : {
+      /* https://github.com/gruntjs/grunt-contrib-nodeunit */
+      tests : [ &#x27;test/**/*Test.js&#x27; ],
+    },
+
+
+    uglify : {
+      /* https://github.com/gruntjs/grunt-contrib-uglify */
+      options : {
+        mangle : false
+      },
+      phantomas : {
+        files : {
+          &#x27;tasks/public/scripts/phantomas.min.js&#x27; : [ &#x27;tasks/assets/scripts/phantomas.js&#x27; ]
+        }
+      }
+    },
+
+
+    watch : {
+      /* https://github.com/gruntjs/grunt-contrib-watch */
+      js : {
+        files   : [ &#x27;tasks/assets/scripts/**/*.js&#x27; ],
+        flatten : true,
+        options : {
+          spawn : false,
+        },
+        tasks   : [ &#x27;uglify&#x27;, &#x27;copy:scripts&#x27; ]
+      },
+      sass : {
+        files   : [ &#x27;tasks/assets/sass/**/*.scss&#x27; ],
+        flatten : true,
+        options : {
+          spawn : false,
+        },
+        tasks   : [ &#x27;compass&#x27;, &#x27;copy:styles&#x27; ]
+      }
+    }
+  } );
+
+  // Actually load this plugin&#x27;s task(s).
+  grunt.loadTasks( &#x27;tasks&#x27; );
+
+  // These plugins provide necessary tasks.
+  grunt.loadNpmTasks( &#x27;grunt-contrib-clean&#x27; );
+  grunt.loadNpmTasks( &#x27;grunt-contrib-compass&#x27; );
+  grunt.loadNpmTa ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 

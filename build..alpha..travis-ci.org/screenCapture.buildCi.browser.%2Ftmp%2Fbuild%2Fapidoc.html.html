@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/stefanjudis/grunt-phantomas"
-
-    >grunt-phantomas (v0.14.0)</a>
+    <a href="https://github.com/stefanjudis/grunt-phantomas">grunt-phantomas (v0.14.0)</a>
 </h1>
 <h4>Grunt plugin for phantomas</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.grunt-phantomas">module grunt-phantomas</a><ol>
 
@@ -86,13 +79,13 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">grunt-phantomas = function ( grunt ) {
-  var devIndexPath = &#x27;./phantomas/&#x27;;
+  var devIndexPath = './phantomas/';
 
   grunt.initConfig( {
 
     clean : {
 <span class="apidocCodeCommentSpan">      /* https://github.com/gruntjs/grunt-contrib-clean */
-</span>      tests : [ &#x27;tmp&#x27; ],
+</span>      tests : [ 'tmp' ],
     },
 
 
@@ -100,9 +93,9 @@
       /* https://github.com/gruntjs/grunt-contrib-compass */
       dist : {
         options : {
-          sassDir     : &#x27;tasks/assets/sass&#x27;,
-          cssDir      : &#x27;tasks/public/styles&#x27;,
-          environment : &#x27;production&#x27;
+          sassDir     : 'tasks/assets/sass',
+          cssDir      : 'tasks/public/styles',
+          environment : 'production'
         }
       }
     },
@@ -113,22 +106,22 @@
       scripts : {
         files : [
           {
-            cwd    : &#x27;tasks/public/scripts/&#x27;,
+            cwd    : 'tasks/public/scripts/',
             expand : true,
-            src    : [ &#x27;**&#x27; ],
-            dest   : devIndexPath + &#x27;public/scripts/&#x27;,
-            filter : &#x27;isFile&#x27;
+            src    : [ '**' ],
+            dest   : devIndexPath + 'public/scripts/',
+            filter : 'isFile'
           },
         ]
       },
       styles : {
         files : [
           {
-            cwd    : &#x27;tasks/public/styles/&#x27;,
+            cwd    : 'tasks/public/styles/',
             expand : true,
-            src    : [ &#x27;**&#x27; ],
-            dest   : devIndexPath + &#x27;public/styles/&#x27;,
-            filter : &#x27;isFile&#x27;
+            src    : [ '**' ],
+            dest   : devIndexPath + 'public/styles/',
+            filter : 'isFile'
           },
         ]
       }
@@ -138,14 +131,14 @@
     jscs : {
       /* https://www.npmjs.org/package/grunt-jscs-checker */
       src     : [
-        &#x27;Gruntfile.js&#x27;,
-        &#x27;tasks/assets/**/*.js&#x27;,
-        &#x27;!tasks/assets/scripts/d3.min.js&#x27;,
-        &#x27;tasks/lib/phantomas.js&#x27;,
-        &#x27;&#x3c;%= nodeunit.tests %&#x3e;&#x27;,
+        'Gruntfile.js',
+        'tasks/assets/**/*.js',
+        '!tasks/assets/scripts/d3.min.js',
+        'tasks/lib/phantomas.js',
+        '&lt;%= nodeunit.tests %&gt;',
       ],
       options : {
-        config : &#x27;.jscs.json&#x27;
+        config : '.jscs.json'
       }
     },
 
@@ -153,14 +146,14 @@
     jshint : {
       /* https://github.com/gruntjs/grunt-contrib-jshint */
       all : [
-        &#x27;Gruntfile.js&#x27;,
-        &#x27;tasks/assets/**/*.js&#x27;,
-        &#x27;!tasks/assets/scripts/d3.min.js&#x27;,
-        &#x27;tasks/lib/**/phantomas.js&#x27;,
-        &#x27;&#x3c;%= nodeunit.tests %&#x3e;&#x27;,
+        'Gruntfile.js',
+        'tasks/assets/**/*.js',
+        '!tasks/assets/scripts/d3.min.js',
+        'tasks/lib/**/phantomas.js',
+        '&lt;%= nodeunit.tests %&gt;',
       ],
       options : {
-        jshintrc : &#x27;.jshintrc&#x27;,
+        jshintrc : '.jshintrc',
       },
     },
 
@@ -170,33 +163,33 @@
       grunt : {
         options : {
           assertions : {
-            &#x27;assetsWithQueryString&#x27; : 3,
-            &#x27;biggestLatency&#x27;        : 1400,
-            &#x27;bodyHTMLSize&#x27;          : 10500,
-            &#x27;commentsSize&#x27;          : 55,
-            &#x27;consoleMessages&#x27;       : 0,
-            &#x27;hiddenContentSize&#x27;     : 65,
-            &#x27;jsErrors&#x27;              : 0,
-            &#x27;gzipRequests&#x27;          : {
-              &#x27;type&#x27;  : &#x27;&#x3c;&#x27;,
-              &#x27;value&#x27; : 8
+            'assetsWithQueryString' : 3,
+            'biggestLatency'        : 1400,
+            'bodyHTMLSize'          : 10500,
+            'commentsSize'          : 55,
+            'consoleMessages'       : 0,
+            'hiddenContentSize'     : 65,
+            'jsErrors'              : 0,
+            'gzipRequests'          : {
+              'type'  : '&lt;',
+              'value' : 8
             },
-            &#x27;medianResponse&#x27;        : 400,
-            &#x27;nodesWithInlineCSS&#x27;    : 0,
-            &#x27;requests&#x27;              : 30,
-            &#x27;timeToFirstImage&#x27;      : 1100,
-            &#x27;DOMelementsCount&#x27;      : 200,
-            &#x27;DOMqueries&#x27;            : 10
+            'medianResponse'        : 400,
+            'nodesWithInlineCSS'    : 0,
+            'requests'              : 30,
+            'timeToFirstImage'      : 1100,
+            'DOMelementsCount'      : 200,
+            'DOMqueries'            : 10
           },
-          // additionalStylesheet : &#x27;/Users/stefan/Desktop/custom2.css&#x27;,
+          // additionalStylesheet : '/Users/stefan/Desktop/custom2.css',
           // buildUi              : false,
-          // output               : &#x27;json&#x27;,
+          // output               : 'json',
           // limitIncludedRuns    : false,
-          indexPath            : &#x27;./phantomas/&#x27;,
+          indexPath            : './phantomas/',
           options              : {
-            &#x27;timeout&#x27;        : 30
+            'timeout'        : 30
           },
-          url                  : &#x27;http://gruntjs.com/&#x27;
+          url                  : 'http://gruntjs.com/'
         }
       }
     },
@@ -204,7 +197,7 @@
 
     nodeunit : {
       /* https://github.com/gruntjs/grunt-contrib-nodeunit */
-      tests : [ &#x27;test/**/*Test.js&#x27; ],
+      tests : [ 'test/**/*Test.js' ],
     },
 
 
@@ -215,7 +208,7 @@
       },
       phantomas : {
         files : {
-          &#x27;tasks/public/scripts/phantomas.min.js&#x27; : [ &#x27;tasks/assets/scripts/phantomas.js&#x27; ]
+          'tasks/public/scripts/phantomas.min.js' : [ 'tasks/assets/scripts/phantomas.js' ]
         }
       }
     },
@@ -224,30 +217,30 @@
     watch : {
       /* https://github.com/gruntjs/grunt-contrib-watch */
       js : {
-        files   : [ &#x27;tasks/assets/scripts/**/*.js&#x27; ],
+        files   : [ 'tasks/assets/scripts/**/*.js' ],
         flatten : true,
         options : {
           spawn : false,
         },
-        tasks   : [ &#x27;uglify&#x27;, &#x27;copy:scripts&#x27; ]
+        tasks   : [ 'uglify', 'copy:scripts' ]
       },
       sass : {
-        files   : [ &#x27;tasks/assets/sass/**/*.scss&#x27; ],
+        files   : [ 'tasks/assets/sass/**/*.scss' ],
         flatten : true,
         options : {
           spawn : false,
         },
-        tasks   : [ &#x27;compass&#x27;, &#x27;copy:styles&#x27; ]
+        tasks   : [ 'compass', 'copy:styles' ]
       }
     }
   } );
 
-  // Actually load this plugin&#x27;s task(s).
-  grunt.loadTasks( &#x27;tasks&#x27; );
+  // Actually load this plugin's task(s).
+  grunt.loadTasks( 'tasks' );
 
   // These plugins provide necessary tasks.
-  grunt.loadNpmTasks( &#x27;grunt-contrib-clean&#x27; );
-  grunt.loadNpmTasks( &#x27;grunt-contrib-compass&#x27; );
+  grunt.loadNpmTasks( 'grunt-contrib-clean' );
+  grunt.loadNpmTasks( 'grunt-contrib-compass' );
   grunt.loadNpmTa ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -261,3 +254,4 @@
     ]
 </div>
 </div>
+</body></html>
